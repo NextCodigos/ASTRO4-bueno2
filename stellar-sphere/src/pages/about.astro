@@ -1,6 +1,9 @@
 ---
 import DefaultLayout from "../layouts/DefaultLayout.astro";
 // import { Button } from "../components/Button";
+// se renderiza en el momento del compilado
+export const prerender = true
+// export const prerender = false  que se compile en el servidor en cada peticion
 ---
 
 <DefaultLayout>
