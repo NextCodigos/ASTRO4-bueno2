@@ -1,25 +1,26 @@
 ---
 const {
-  post: { title, description,content,created_at },
+  post: { title, description, content, created_at,id },
 } = Astro.props;
 ---
 
-<article
-  id="article"
-  class="flex max-w-sm flex-col gap-2 rounded bg-[#1F2937] px-5 py-6 text-white"
+<a href={`/posts/${id}`}>
+  <article
+  class="bg-[#1F2937] text-white max-w-sm px-5 py-6 flex flex-col gap-2 rounded"
 >
   <img
-    src="https://images.pexels.com/photos/67112/pexels-photo-67112.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    src="https://images.pexels.com/photos/40185/mac-freelancer-macintosh-macbook-40185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    alt=""
     class="rounded"
   />
-
   <h2 class="text-2xl font-bold">{title}</h2>
   <p>{description}</p>
-
   <p class="text-zinc-300">
     {content.slice(0, 100) + "..."}
   </p>
-  <p class="text-zinc-300">{new Date(created_at).toLocaleDateString()} - 16 min read</p>
+  <p class="text-zinc-300">
+    {new Date(created_at).toLocaleDateString()} - 16 min read
+  </p>
 </article>
-
+</a>
 <!-- Los props son como los argumentos de una funcion es lo que los hace reutiliables con diferentes fotos y contenidos -->
