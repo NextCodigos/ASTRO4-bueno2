@@ -1,5 +1,7 @@
 ---
-import Post from "../components/Post.astro"
+import Post from "../components/Post.astro";
+const response = await fetch("http://localhost:3000/posts");
+const posts = await response.json();
 ---
 
 <html lang="en">
@@ -14,7 +16,7 @@ import Post from "../components/Post.astro"
 		<h1>Astro</h1>
 		<!-- Pasamos props al componente -->
 		<!-- Unas llaves para javascript componente astro y otras para objeto -->
-		<Post post={{
+		<!-- <Post post={{
 			title: "My super coool title",
 			description: "My super cool description"
 		}}/>
@@ -29,7 +31,10 @@ import Post from "../components/Post.astro"
 		<Post post={{
 			title: "My super coool title 4",
 			description: "My super cool description 4"
-		}}/>
+		}}/> -->
+
+		{posts.map((post) => <Post post={post} />)}
+
 		
 	</body>
 </html>
