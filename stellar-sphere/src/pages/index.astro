@@ -13,9 +13,23 @@ import Post from "../components/Post.astro"
 	<body>
 		<h1>Astro</h1>
 		<!-- Pasamos props al componente -->
-		<Post title="Mi post nuevo" description="La descripción de mi post"/>
-		<Post/>
-		<Post/>
-		<Post/>
+		<!-- Unas llaves para javascript componente astro y otras para objeto -->
+		<Post post={{
+			title: "My super coool title",
+			description: "My super cool description"
+		}}/>
+		<Post post={{
+			title: "My super coool title 2",
+			description: "My super cool description 2"
+		}}/>
+		<Post post={{
+			title: "My super coool title 3",
+			description: "My super cool description 3"
+		}}/>
+		<Post post={{
+			title: "My super coool title 4",
+			description: "My super cool description 4"
+		}}/>
+		
 	</body>
 </html>
